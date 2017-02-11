@@ -11,21 +11,44 @@ import javax.annotation.Nullable;
  */
 public class SledException extends Exception {
 
+	/** Error message. */
     private String message = null;
 
+    /** Type of error. */
     private Type type;
 
-    public SledException(@Nonnull Type type) {
+    /**
+     * Constructor for exception.
+     * @param type of failure
+     */
+    public SledException(@Nonnull final Type type) {
         super(type.toString());
         this.type = type;
     }
 
+    /**
+     * Constructor.
+     * @param failureType type of failure
+     * @param cause error cause
+     */
     public SledException(@Nonnull final Type failureType, @Nullable final Throwable cause) {
         super(failureType.toString(), cause);
     }
 
+    /** 
+     * Types of errors.
+     * @author kraman
+     *
+     */
     public enum Type {
-        CONNECT_FAILURE, TIMEDOUT, PARSE_FAILURE, INVALID_STATE, INTERNAL_FAILURE
+    	/** failed to connect to server. */
+        CONNECT_FAILURE,
+        /** operation timed out. */
+        TIMEDOUT, PARSE_FAILURE,
+        /** cannot process message - invalid state. */
+        INVALID_STATE,
+        /** something failed internally. */
+        INTERNAL_FAILURE
     }
 
 }

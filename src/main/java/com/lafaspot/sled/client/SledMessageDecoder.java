@@ -12,6 +12,7 @@ import java.util.List;
 import javax.annotation.Nonnull;
 
 import com.lafaspot.logfast.logging.Logger;
+import com.lafaspot.sled.session.SledSession;
 
 /**
  * Class to decode messages from POP server.
@@ -21,9 +22,15 @@ import com.lafaspot.logfast.logging.Logger;
  */
 public class SledMessageDecoder extends MessageToMessageDecoder<String> {
 
+	/** The session to be used. */
     private final SledSession session;
 
-    public SledMessageDecoder(@Nonnull SledSession session, @Nonnull Logger logger) {
+    /**
+     * Constructor for the message decoder.
+     * @param session the session object
+     * @param logger the logger object
+     */
+    public SledMessageDecoder(@Nonnull final SledSession session, @Nonnull final Logger logger) {
         this.session = session;
     }
 

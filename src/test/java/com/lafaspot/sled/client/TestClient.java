@@ -9,6 +9,7 @@ import com.lafaspot.logfast.logging.LogContext;
 import com.lafaspot.logfast.logging.LogManager;
 import com.lafaspot.logfast.logging.Logger;
 import com.lafaspot.logfast.logging.Logger.Level;
+import com.lafaspot.sled.session.SledSession;
 
 /**
  * @author kraman
